@@ -2,8 +2,8 @@ class Event {
   final String title;
   final String category;
   final String date;
-  final String status; // 'soon' atau 'now'
-  final List<String> images; // List gambar untuk slider
+  final String status;
+  final List<String> images;
   final String description;
   final double price;
 
@@ -18,9 +18,7 @@ class Event {
   });
 }
 
-// Data Dummy Event (Total 10 Data - Tema Gunung)
 final List<Event> allEvents = [
-  // 1. Semeru - Now
   Event(
     title: 'Open Trip Semeru 3D2N',
     category: 'Hiking',
@@ -33,7 +31,6 @@ final List<Event> allEvents = [
     description: 'Pendakian atap pulau Jawa, Gunung Semeru (Mahameru). Nikmati keindahan Ranu Kumbolo yang memukau.',
     price: 850000,
   ),
-  // 2. Bromo - Now
   Event(
     title: 'Bromo Midnight Tour',
     category: 'Tour',
@@ -46,7 +43,6 @@ final List<Event> allEvents = [
     description: 'Saksikan Golden Sunrise terbaik di Indonesia tanpa perlu mendaki berat. Full fasilitas Jeep.',
     price: 350000,
   ),
-  // 3. Rinjani - Soon
   Event(
     title: 'Ekspedisi Rinjani 4D3N',
     category: 'Expedition',
@@ -59,7 +55,6 @@ final List<Event> allEvents = [
     description: 'Menaklukan gunung terindah di Indonesia. Paket lengkap via Sembalun, lintas Senaru.',
     price: 2500000,
   ),
-  // 4. Prau - Soon
   Event(
     title: 'Camping Ceria G. Prau',
     category: 'Camping',
@@ -72,7 +67,6 @@ final List<Event> allEvents = [
     description: 'Cocok untuk pemula! Camping santai menikmati sunrise dengan view Sindoro Sumbing.',
     price: 400000,
   ),
-  // 5. Gede Pangrango - Now
   Event(
     title: 'Tektok Gunung Gede',
     category: 'Hiking',
@@ -85,7 +79,6 @@ final List<Event> allEvents = [
     description: 'Pendakian cepat satu hari (Tektok) ke puncak Gunung Gede. Khusus yang fisik prima.',
     price: 150000,
   ),
-  // 6. Merbabu - Soon
   Event(
     title: 'Merbabu via Suwanting',
     category: 'Hiking',
@@ -98,7 +91,6 @@ final List<Event> allEvents = [
     description: 'Jalur yang menantang dengan pemandangan sabana yang luar biasa indah di Merbabu.',
     price: 600000,
   ),
-  // 7. Ijen - Now
   Event(
     title: 'Ijen Blue Fire',
     category: 'Tour',
@@ -111,7 +103,6 @@ final List<Event> allEvents = [
     description: 'Fenomena api biru langka yang hanya ada dua di dunia. Wajib dikunjungi sekali seumur hidup.',
     price: 300000,
   ),
-  // 8. Kerinci - Soon
   Event(
     title: 'Atap Sumatera: Kerinci',
     category: 'Expedition',
@@ -124,7 +115,6 @@ final List<Event> allEvents = [
     description: 'Pendakian ke gunung berapi tertinggi di Indonesia. Uji adrenalinmu di sini.',
     price: 1800000,
   ),
-  // 9. Papandayan - Soon
   Event(
     title: 'Family Camp Papandayan',
     category: 'Camping',
@@ -137,7 +127,6 @@ final List<Event> allEvents = [
     description: 'Camping ceria ramah anak dan keluarga. Menikmati hutan mati dan kawah belerang.',
     price: 350000,
   ),
-  // 10. Carstensz - Soon
   Event(
     title: 'Carstensz Pyramid',
     category: 'VVIP Expedition',

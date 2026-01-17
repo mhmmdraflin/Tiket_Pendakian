@@ -7,26 +7,22 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Filter data berdasarkan status
     final nowEvents = allEvents.where((e) => e.status == 'now').toList();
     final soonEvents = allEvents.where((e) => e.status == 'soon').toList();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Dashboard Event"),
-        automaticallyImplyLeading: false, // Hilangkan tombol back
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Section NOW
             _buildSectionHeader("Sedang Berlangsung (Now) 🔥"),
             _buildEventList(context, nowEvents),
 
             const SizedBox(height: 20),
-
-            // Section SOON
             _buildSectionHeader("Akan Datang (Soon) 📅"),
             _buildEventList(context, soonEvents),
 
@@ -49,7 +45,7 @@ class DashboardScreen extends StatelessWidget {
 
   Widget _buildEventList(BuildContext context, List<Event> events) {
     return SizedBox(
-      height: 240, // Tinggi area scroll horizontal
+      height: 240,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -58,7 +54,6 @@ class DashboardScreen extends StatelessWidget {
           final event = events[index];
           return GestureDetector(
             onTap: () {
-              // Navigasi ke Detail Screen
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DetailScreen(event: event)),
@@ -81,7 +76,6 @@ class DashboardScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Gambar Thumbnail
                   ClipRRect(
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.network(

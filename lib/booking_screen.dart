@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class BookingScreen extends StatelessWidget {
   const BookingScreen({super.key});
 
-  // Data Dummy untuk Card Booking (Sesuai Wireframe)
-  // Data Dummy untuk Card Booking (Tema Gunung)
   final List<Map<String, dynamic>> bookingEvents = const [
     {
       'title': 'Open Trip Semeru',
@@ -43,8 +41,6 @@ class BookingScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // --- 1. HEADER SECTION (Sesuai Wireframe) ---
-                // Hiasan bar abu-abu di atas
                 Container(
                   width: double.infinity,
                   height: 24,
@@ -54,8 +50,6 @@ class BookingScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-
-                // Judul Besar
                 const Text(
                   "Booking Event",
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.w300, color: Colors.black87),
@@ -67,15 +61,14 @@ class BookingScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                // --- 2. GRID CARD SECTION ---
                 GridView.builder(
-                  shrinkWrap: true, // Agar grid tidak scroll sendiri (ikut induknya)
+                  shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // 2 Kolom
+                    crossAxisCount: 2,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    childAspectRatio: 0.7, // Rasio tinggi:lebar kartu (agar memanjang ke bawah)
+                    childAspectRatio: 0.7,
                   ),
                   itemCount: bookingEvents.length,
                   itemBuilder: (context, index) {
@@ -88,7 +81,6 @@ class BookingScreen extends StatelessWidget {
           ),
         ),
       ),
-      // Tombol bulat di pojok kanan bawah (Sesuai wireframe)
       floatingActionButton: Container(
         height: 60, width: 60,
         decoration: BoxDecoration(
@@ -98,12 +90,9 @@ class BookingScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Widget untuk Card Booking
   Widget _buildBookingCard(BuildContext context, Map<String, dynamic> event) {
     return GestureDetector(
       onTap: () {
-        // Navigasi ke Halaman Detail Tipe Tiket
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -114,7 +103,7 @@ class BookingScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFFF5F5F5), // Warna abu-abu sangat muda
+          color: const Color(0xFFF5F5F5),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -171,8 +160,6 @@ class BookingScreen extends StatelessWidget {
     );
   }
 }
-
-// --- HALAMAN BARU: DETAIL TIPE TIKET (Regular, VIP, VVIP) ---
 class BookingDetailTypeScreen extends StatelessWidget {
   final String title;
   const BookingDetailTypeScreen({super.key, required this.title});
@@ -186,7 +173,6 @@ class BookingDetailTypeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gambar Header (Placeholder Abu-abu)
             Container(
               height: 200,
               width: double.infinity,
@@ -202,8 +188,6 @@ class BookingDetailTypeScreen extends StatelessWidget {
             const Text("Sesuaikan dengan kebutuhan Anda", style: TextStyle(color: Colors.grey)),
 
             const SizedBox(height: 20),
-
-            // Card Pilihan Tiket
             _buildTicketCard(
                 context,
                 "Regular",

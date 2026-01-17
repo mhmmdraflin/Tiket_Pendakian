@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
         ),
       ),
-      home: const LoginScreen(), // Halaman pertama kali buka
+      home: const LoginScreen(),
     );
   }
 }

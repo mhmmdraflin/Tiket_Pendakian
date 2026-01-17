@@ -10,15 +10,14 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  bool isBookmarked = false; // Status Bookmark
-  final PageController _pageController = PageController(); // Controller slider
+  bool isBookmarked = false;
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. GAMBAR SLIDER (Gallery)
           SizedBox(
             height: 400,
             child: PageView.builder(
@@ -33,15 +32,12 @@ class _DetailScreenState extends State<DetailScreen> {
               },
             ),
           ),
-
-          // 2. TOMBOL BACK & BOOKMARK (Floating)
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Tombol Back
                   CircleAvatar(
                     backgroundColor: Colors.white,
                     child: IconButton(
@@ -49,7 +45,6 @@ class _DetailScreenState extends State<DetailScreen> {
                       onPressed: () => Navigator.pop(context),
                     ),
                   ),
-                  // Tombol Favorite / Bookmark
                   CircleAvatar(
                     backgroundColor: Colors.white,
                     child: IconButton(
@@ -74,8 +69,6 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
           ),
-
-          // 3. INDIKATOR SLIDER (Titik-titik)
           Positioned(
             top: 360,
             left: 0,
@@ -96,8 +89,6 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
           ),
-
-          // 4. KONTEN DETAIL (Draggable Sheet)
           DraggableScrollableSheet(
             initialChildSize: 0.55,
             minChildSize: 0.55,
@@ -113,7 +104,6 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: ListView(
                   controller: scrollController,
                   children: [
-                    // Garis Handle
                     Center(
                       child: Container(
                         width: 40, height: 5,

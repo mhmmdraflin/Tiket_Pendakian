@@ -14,12 +14,9 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Logika Filter
     final results = allEvents.where((e) {
       return e.title.toLowerCase().contains(_keyword.toLowerCase());
     }).toList();
-
-    // Cek apakah user sedang mengetik tapi tidak ada hasil
     final bool isNotFound = _keyword.isNotEmpty && results.isEmpty;
 
     return Scaffold(
@@ -31,7 +28,6 @@ class _SearchScreenState extends State<SearchScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Search Bar
             TextField(
               onChanged: (value) {
                 setState(() {
@@ -47,8 +43,6 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // KONDISI 1: Event Tidak Ditemukan
             if (isNotFound) ...[
               Column(
                 children: [
@@ -64,7 +58,6 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: Text("Mungkin Anda suka (Suggestion):", style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   const SizedBox(height: 10),
-                  // Tampilkan saran (misal 2 event pertama)
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -76,7 +69,6 @@ class _SearchScreenState extends State<SearchScreen> {
                 ],
               )
             ]
-            // KONDISI 2: Tampilkan Hasil Pencarian
             else ...[
               Expanded(
                 child: ListView.builder(
@@ -107,7 +99,6 @@ class _SearchScreenState extends State<SearchScreen> {
         subtitle: Text(event.date),
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
         onTap: () {
-          // Arahkan ke Halaman Galeri Detail (Detail Screen)
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => DetailScreen(event: event)),
