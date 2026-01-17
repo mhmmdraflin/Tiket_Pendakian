@@ -139,28 +139,10 @@ Silakan lakukan langkah berikut:
 
 ---
 
-<div align="center">
+## 📧 Kontak Pengembang
 
-**Dikembangkan oleh Muhammad Rafli Nurfathan**
-Jika proyek ini bermanfaat, silakan berikan ⭐ pada repository ini.
-
-</div>
-```
+- **Nama** : Muhammad Rafli Nurfathan  
+- **Email** : [nurfathanrafli85@gmail.com](mailto:nurfathanrafli85@gmail.com)  
+- **LinkedIn** : [linkedin.com/in/mhmmdraflin](https://www.linkedin.com/in/mhmmdraflin)
 
 ---
-
-### Kenapa README ini terlihat profesional?
-
-* Struktur jelas dan konsisten
-* Bahasa formal & cocok untuk portofolio
-* Siap untuk **GitHub, tugas kuliah, capstone, atau showcase Bangkit**
-* Mudah dibaca oleh recruiter maupun dosen
-
-Kalau mau, saya bisa:
-
-* Menyesuaikan README untuk **tugas kuliah**
-* Mengubah ke **full English**
-* Menambahkan **arsitektur aplikasi / clean architecture**
-* Membuat versi **README untuk UI/UX showcase**
-
-Tinggal bilang 👍
